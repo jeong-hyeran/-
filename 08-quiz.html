@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>08-quiz.html</title>
+    <style>
+        body{
+            width: 1600px;
+            margin: auto;
+        }
+         #top, #main, #menu, #image{
+            margin: auto;
+            padding: 0 50px;
+            /* border: 0.5px dashed orange; */
+            width: 1600px;
+            box-sizing: border-box;
+        }
+        .contour{
+            border: 0.1px solid lightgray;
+            width: 100%;
+        }
+        .flex{
+            display: flex;
+            justify-content: space-between;
+            list-style: none;
+            align-items: center;
+        }
+        .list{
+            list-style: none;
+        }
+        #top{
+            justify-content: space-between;
+            padding: 0;
+        }
+        #top #topMe{
+            justify-content: space-between;
+        }
+        #top strong{
+            padding-left: 30px;
+
+        }
+        #top li{
+            margin: 1px 10px;
+        }
+        #top .blank{
+            width: 500px;
+        }
+        hr{
+            border: 0.3px solid black;
+            margin: 0;
+        }
+        #logo{
+            padding-top:30px ;
+            font-weight: bold;
+            font-size: 45px;
+            text-align: center;
+            margin: 30px auto;
+        }
+        .cycle{
+            width: 30px;
+            height: 30px;
+            background-color: rgb(211, 211, 211, 0.8);
+            border-radius: 50%;
+            text-align: center;
+            /* font-size: 30px; */
+            margin: 5px;
+            color: white;
+        }
+        #main .bottom{
+            justify-content: space-between;
+            padding: 5px ;
+            margin: auto;
+        }
+        #main .blank{
+            width: 80%;
+        }
+        #main input{
+            width: 300px;
+            border: 0px;
+            padding: 5px;
+        }
+        #image{
+            background-image:url('쇼핑몰.jpg');
+            background-repeat: no-repeat;
+            background-size: 100%;
+            height: 800px;
+        }
+        #menu{
+            height: 50px;
+            margin: 0 auto;
+        }
+  
+        #bar{
+            width: 20px;
+            height:50px;
+            padding: 0 15px;
+            font-size: 30px;
+            border-left: 0.5px solid lightgrey;
+            border-right: 0.5px solid lightgrey;
+            text-align: center;
+        }
+        #bar2{
+            justify-content: space-between;
+            margin: auto 0px;
+            padding: 0;
+        }
+        #main #glass{
+            width: 50px;
+            background-color: white;
+            border-color: white;
+        }
+        #main #searchbar{
+            border: 0.5px solid gray;
+        }
+        #remocon {
+            position: fixed;
+            background-color: white;
+            right: 1px;
+            top: 30%;
+        }
+        #remocon div{
+            border: 0.5px solid lightgray;
+            text-align: center;
+            font-size: 25px;
+            width: 50px;
+            height: 50px;
+            margin: auto;
+            padding-top: 6px ;
+
+        }
+    </style>
+</head>
+<body>
+    <h1>08-quiz.html</h1>
+    <hr>
+    <br><br><br><br>
+    <div class="contour"></div>
+    <div id="top" >
+        <ul id="topMe" class="flex list">
+            <li class="left">LOGIN</li>
+            <li class="left">JOIN US</li>
+            <li class="left flex">CART<div class="cycle">0</div></li>
+            <li class="left">ORDER</li>
+            <li style="border-left: 0.5px solid lightgray"><strong>MY PAGE</strong></li>
+            <li style="border-left: 0.5px solid lightgray"><strong>BOOKMARK</strong></li>
+            <li class="blank"></li>
+            <li class="right">공지사항</li>
+            <li class="right">이벤트</li>
+            <li class="right">상품문의</li>
+            <li class="right">상품후기</li>
+        </ul>
+    </div>
+
+    <div class="contour"></div>
+
+    <div id="main">
+        <div id="logo">D'ARLES</div>
+        <div class="bottom flex">
+            <div class="cycle">F</div>
+            <div class="cycle">📷</div>
+            <div class="cycle">🎥</div>
+            <div class="blank"></div>
+            
+            <div id=searchbar class="flex">
+                <input type="search">
+                <input id="glass" type="submit" value="🔍">
+            </div>
+        </div>
+
+    </div>
+
+    <div class="contour"></div>
+
+    <div id="menu">
+        <!-- <div id="bar">≡</div> -->
+        <ul id="bar2" class="flex list">
+            <li id="bar">≡</li>
+            <!-- <li id="blank"></li> -->
+            <li style="color: plum;">RONA universe</li>
+            <li>남성의류</li>
+            <li>아우터</li>
+            <li>탑</li>
+            <li>드레스</li>
+            <li>바텀</li>
+            <li>악세사리</li>
+        </ul>
+    </div>
+
+    <div class="contour"></div>
+    <br>
+    <div id="image"></div>
+
+    <div id="remocon">
+        <div style="background-color: black;
+                    color: white;">◀️</div>
+        <div>🔍</div>
+        <div>🛻</div>
+        <div>🛒</div>
+        <div>♥️</div>
+        <div>🕘</div>
+        <div>💬</div>
+        <div style="border-bottom: 0px;
+                    padding-bottom: 0;
+                    height: 40px;">🔼</div>
+        <div style="border-top: 0px;
+                    padding-top: 0;
+                    margin-top: 0;
+                    height: 40px;">🔽</div>
+    </div>
+    
+    
+</body>
+</html>
