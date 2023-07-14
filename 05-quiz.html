@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05-quiz.html</title>
+    <style>
+        #root{
+            /* border: 1px dashed orange; */
+            width: 1400px;
+            margin: 0 auto;
+            /* background-image: url(농협/back2.png);
+            background-position: center; */
+        }
+        #frame{
+            border: 1px dashed green;
+            margin: auto;
+        }
+        #bar{
+            width: 100%;
+            border: 0.5px solid lightgrey;
+        }
+        .flex{
+            display: flex;
+            justify-content: space-between;
+            list-style: none;
+        }
+        #top_top{
+            padding: 10px 15px;
+        }
+        #top_top #logo{
+            color: #0055a5;
+            font-size: 2em;
+        }
+        #top_top img{
+            height: 30px;
+            width: 35px;
+            padding-top: 8px;
+        }
+        #menu{
+            padding-top: 10px;
+            line-height: 1em;
+            height: 1em;
+        }
+    
+        #menu > div:first-child{
+            border-right: 0.5px solid #929492;
+        }
+        #menu > div{
+            padding: 0 20px;
+        }
+        #topnav{
+            margin: 0;
+        }
+    
+        #topnav ul{
+            color: #9695A5;
+            margin: 0;
+            padding: 10px;
+            font-size: 1.5em;
+        }
+        #topnav li{
+            padding: 0 13px;
+        }
+        #topnav li:last-child{
+            padding-left: 20px;
+            font-size: 2em;
+            line-height:20px;
+        }
+        #main_top{
+            text-align: center;
+            margin: 30px;
+            margin-bottom: 50px;
+        }
+        #main_top div{
+            font-size: 4.5em;
+        }
+        #main_top b{
+            color: rgb(9, 89, 191);
+            font-weight: bold;
+        }
+        #main_top p{
+            color: #929492;
+            font-size: 1.5em;
+            margin-top: 0;
+        }
+    
+        #main_middle #news{
+            padding: 15px;
+            margin-bottom: 10px;
+            font-size: 30px;
+            line-height: 20px;
+            font-weight: bold;
+            color: rgb(9, 89, 191);
+        }
+        #main_middle img {
+            box-sizing: border-box;
+            border-radius: 20px;
+            /* width: 45%; */
+            height: 250px;
+            margin: auto 5px;
+        }
+  
+        #main_middle #str {
+            padding-right: 20px;
+            margin: 20px;
+        }
+        #main_middle #str1 {
+            margin-top: 0;
+            flex: 1;
+            text-align: center;
+            background-color: #0055a5;
+            color: white;
+            border-radius: 4px;
+            line-height: 23px;
+            font-weight: bold;
+            width: 65px;
+        }
+        #main_middle #str2 {
+            font-size: 25px;
+        }
+        #main_middle #str3 {
+            font-size: 15px;
+            font-weight: bold;
+            padding: 30px 0;
+        }
+        #main_middle #str4 {
+            font-size: 15px;
+        }
+        #blue{
+            z-index: 0;
+            width: 90%;
+            height: 400px;
+            margin: 30px auto;
+            padding: 3px;
+            border-radius: 30px;
+            background-color: #0055a5;
+        }
+        #white #center{
+            display: flex;
+        }
+        #white{
+            border: 1px solid #0055a5;
+            box-sizing: border-box;
+            z-index: 1;
+            margin: 0px;
+            width: 65%;
+            height: 100%;
+            border-radius: 30px;
+            background-color: white;
+            padding: 20px;
+        }
+        #right{
+            box-sizing: border-box;
+            width: 40%;
+            color: white;
+            padding: 30px;
+            padding-left: 50px;
+            line-height: 100%;
+        }
+        #right #text{
+            padding: 10px 20px;
+            box-sizing: border-box;
+            margin: auto;
+            padding-right: 0;
+            width: 250px;
+        }
+        #right #first{
+            font-size: 1.25em;
+            line-height: 1.5em;
+        }
+        #right #dash{
+            border: 0.5px dashed white;
+            width: 40%;
+            margin: 30px 0;
+        }
+        #main_middle #plus{
+            text-align : right;
+            /* font-weight: bold; */
+            font-size: 1em;
+            margin-bottom: 30px;
+        }
+        #main_middle #date{
+            padding-top: 10px;
+        }
+        #title{
+            font-weight: bold;
+            color: #0055a5;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+        #detail{
+            color: #929492;
+            margin-bottom:15px;
+        }
+        #end{
+            color: #9695A5;
+            align-items: end;
+        }
+        .box{
+            box-sizing: border-box;
+            margin: 15px;
+            border: 2px solid #929492;
+            border-radius: 30px 30px 45px 30px;
+            box-shadow: 1px 1px 2px gray;
+            padding-top: 20px;
+            padding-left: 25px;
+            width: 50%;
+        }
+        #box1{
+            height: 170px;
+            padding: 5px 50px;
+        }
+        #voice{
+            box-sizing: border-box;
+            width: 100%;
+            padding: 0;
+        }
+        #voice div{
+            padding: 10px;
+        }
+        #box2{
+            height: 170px;
+            padding: 5px 50px;
+            margin-right: 20px;
+        }
+        #box2 #end{
+            padding: 5px;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        #box2 ul{
+            align-items: center;
+            padding: 0;
+        }
+        #box2 li{
+            margin: auto 30px;
+            color: #525252;
+            font-size: 1.2rem;
+        }
+        #box2 li:nth-child(1),
+        #box2 li:nth-child(3),
+        #box2 li:nth-child(5){
+            font-size: 40px;
+        }
+        #introduction { 
+
+            background-image: url('농협/green2.png');
+            background-size:400px;
+            background-repeat: no-repeat;
+            background-position: bottom; 
+            background-position-x: right;
+            box-sizing: border-box;
+        }
+        #information { 
+        
+            background-image: url('농협/yellow2.png');
+            background-size:400px;
+            background-repeat: no-repeat;
+            background-position: bottom; 
+            background-position-x: right;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <input type="color">
+    <h1>05-quiz.html</h1>
+    <hr>
+
+    <div id="root">
+        <!-- <div id="frame"> -->
+            <div id="top">
+                <div id=top_top class="flex">
+                    <div id="logo" class="flex">
+                        <img src="농협/스크린샷 2023-07-14 140833.png" alt="">
+                        <div><b>NH농협은행</b></div>
+                    </div>
+                    <div id="menu" class="flex">
+                        <div>Language ▼</div>
+                        <div>Banking ▼</div>
+                    </div>
+                </div>
+                <div id="topnav">
+                    <ul class="flex">
+                        <li>은행안내</li>
+                        <li>윤리경영</li>
+                        <li>금융소비자보호</li>
+                        <li>기업지배구조</li>
+                        <li>경영정보</li>
+                        <li>ESG 경영</li>
+                        <li>채용정보</li>
+                        <li>홍보센터</li>
+                        <li>≡</li>
+                    </ul>
+                </div>
+            </div>
+    </div>
+    <div id="bar"></div>
+    <div id="root">
+        <!-- </div> -->
+        <div id="main">
+            <div id="main_top">
+                <div>사랑받는 <b>일등 민족은행</b></div>
+                <p>농업인과 고객 모두가 행복한 금융을 만들어 갑니다.</p>
+            </div>
+            <div id="main_middle">
+                <div id="blue" class="flex">
+                    <div id="white">
+                        <div id="news">NH 뉴스</div>
+                        <div id="center">
+                            <img src="농협/보드.jpg" alt="사진">
+                            <div id="str">
+                                <h4 id="str1">NH뉴스</h4>
+                                <div id="str2">NH농협은행, 펀드가입 이벤트 실시</div>
+                                <div id="str3">NH농협은행, 펀드가입 이벤트 실시</div>
+                                <div id="str4">2023-07-03</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="right" class="flex">
+                        <div id="text">
+                            <div id="first">NH농협은행, 국민비서 서비스 출시기념 이벤...</div>
+                            <div id="date">2023-07-03</div>
+                            <div id="dash"></div>
+                            <div id="first">NH농협은행, 농식품분야 성장 지원을 위한 ⌜NH ...</div>
+                            <div id="date">2023-07-02</div>
+                        </div>
+                        <div id="plus">더보기 ></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="box1" class="flex">
+            <div id="introduction" class="box">
+                <div>
+                    <div id="title">NH농협은행 소개</div>
+                    <div id="detail">대한민국의 행복파트너!</div>
+                    <div id="end">자세히 보기 ></div>
+                </div>
+                <!-- <div>
+                    <img src="농협/green.png" alt="">
+                </div> -->
+            </div>
+            <div id="information" class="box">
+                <div id="title">경영정보</div>
+                <div id="detail">경영•재무현황 및 공시자료</div>
+                <div id="end">자세히 보기 ></div>
+            </div>
+        </div>
+        <div id="box2">
+            <div id="voice" class="box flex">
+                <div>
+                    <div id="title">고객의 소리</div>
+                    <div id="end">자세히 보기 ></div>
+                </div>
+                <ul class="flex">
+                    <li>🧑🏻‍💻</li>
+                    <li>칭찬/불만/제안/민원</li>
+                    <li>🙋🏻</li>
+                    <li>민원사례(FAQ)</li>
+                    <li>📲</li>
+                    <li>민원사무편람</li>
+                </ul>
+            </div>
+        </div>
+
+        
+    </div><!--frame-->
+</body>
+</html>
