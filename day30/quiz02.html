@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #root{
+            width: 1000px;
+            margin: auto;
+            border: 1px solid black;
+        }
+        #top{
+            margin: 0;
+            background-color: lightgray;
+            height: 200px;
+            padding: 60px;
+            box-sizing: border-box;
+        }
+        #top h1{
+            color: white;
+            background-color: purple;
+            margin: auto;
+            padding: 10px;
+            width: fit-content;
+        }
+        #main{
+            display: flex;
+            margin: 10px 0;
+        }
+        #main > #left{
+            flex: 1;
+            background-color: black;
+            color: white;
+            padding:10px 5px ;
+        }
+        #main li{
+            list-style: none;
+            padding: 10px;
+        }
+        #main #right{
+            flex: 3;
+            padding: 10px 5px;
+        }
+        #footer{
+            margin: auto 15px;
+            border-top: 1px solid black;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="root">
+        <div id="top">
+            <h1>LOGO</h1>
+        </div>
+        <div id="main" class="flex">
+            <div id="left">
+                <ul>
+                    <li>menu-1</li>
+                    <li>menu-2</li>
+                    <li>menu-3</li>
+                </ul>
+            </div>
+            <div id="right">
+                <h1>Hello World</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident quia laboriosam hic perspiciatis mollitia officia blanditiis, cum repellendus esse ullam cumque. Modi vero quis repellat nemo quisquam pariatur eos molestias.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident quia laboriosam hic perspiciatis mollitia officia blanditiis, cum repellendus esse ullam cumque. Modi vero quis repellat nemo quisquam pariatur eos molestias.</p>
+            </div>
+        </div>
+        <div id="footer">
+            <div>ⓒcopy</div>
+        </div>
+    </div>
+    
+</body>
+</html>
