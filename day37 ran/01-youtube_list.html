@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01-youTube.html</title>
+    <style>
+        /*대부분 요소에 적용할 공통 속성을 지정하는 부분*/
+        div{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Noto Sans KR';
+        }
+        /*여기는 각 요소의 윤곽을 잡는 부분*/
+        #root{
+            width: 1530px;
+            margin: auto;
+        }
+        .wrap{
+            display: flex;
+            flex-flow: wrap;
+        }
+        .item{
+            /* border: 1px dashed red; */
+            margin: 30px 10px;
+            width: 360px;
+            height: 320px;
+            cursor: pointer;
+        }
+        /*내부 상세 요소의 배치 + 디테일 외형*/
+        .item > .image{
+            /* border: 1px dashed blue; */
+            height: 200px;
+            margin-bottom: 10px;
+        }
+        .item > .image > img{
+            width: 100%;
+            border-radius: 10px;
+        }
+        .item> .content{
+            /* border: 1px dashed green; */
+            height: max-content;
+            display: flex;
+        }
+        .content > .left{
+            /* border: 1px dashed skyblue; */
+            flex: 1;
+            padding-right: 10px;
+        }
+        
+        .content > .left > img{
+            border-radius: 50%;
+            width: 100%;
+        }
+        .content > .right{
+            /* border: 1px dashed hotpink; */
+            flex: 5;
+        }
+        .content > .right > .title{
+        font-size: 1.1em;
+        font-weight: bold;
+        }
+        .content > .right > div:not(.title){
+            color: gray;
+        }
+        .content > .right > .channel > span{
+            background-color: grey;
+            color: white;
+            display: inline-block;/*같은 줄에서 크기를 변경해주고 싶어서 inline처리 함*/
+            width: 21px;
+            height: 21px;
+            line-height: 21px;
+            font-size: 12px;
+            text-align: center;
+            border-radius: 50%;
+            margin-left: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>01-youtube_list.html</h1>
+    <hr>
+    
+    <div id="root">
+        <div class="wrap">
+            <div class="item">
+                <div class="image">
+                    <img src="thumbnail/1.webp" >
+                </div>
+                <div class="content">
+                    <div class="left icon">
+                        <img src="thumbnail/1 icons.jpg" >
+                    </div>
+                    <div class="right">
+                        <div class="title">
+                            여름에 듣기 좋은 노래 🌊 상쾌하고 신나는 여름 팝송
+                        </div>
+                        <div class="channel">
+                            Blue rain<span>✔️</span>
+                        </div>
+                        <div class="etc">
+                            <span class="viewCount">조회수 31만회</span>
+                            •
+                            <span class="uploadTime">11개월 전</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="item">
+                <div class="image">
+                    <img src="thumbnail/2.webp" >
+                </div>
+                <div class="content">
+                    <div class="left icon">
+                        <img src="thumbnail/2 icons.jpg" >
+                    </div>
+                    <div class="right">
+                        <div class="title">
+                            연못의 범인을 찾는라 며칠 간 난리를 쳤습니다.
+                        </div>
+                        <div class="channel">
+                            김줄스 ZoolsKim<span>✔️</span>
+                        </div>
+                        <div class="etc">
+                            <span class="viewCount">조회수 21만회</span>
+                            •
+                            <span class="uploadTime">2일 전</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="image">
+                    <img src="thumbnail/3.webp" >
+                </div>
+                <div class="content">
+                    <div class="left icon">
+                        <img src="thumbnail/3 icons.jpg" >
+                    </div>
+                    <div class="right">
+                        <div class="title">
+                           [Playlist]여전히 너 | 비오는 날 센치한 감성힙합/R&B 플레이리스트
+                        </div>
+                        <div class="channel">
+                            릴숭어 lil mullet<span>✔️</span>
+                        </div>
+                        <div class="etc">
+                            <span class="viewCount">조회수 7.6만회</span>
+                            •
+                            <span class="uploadTime">6개월 전</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="image">
+                    <img src="thumbnail/4.webp" >
+                </div>
+                <div class="content">
+                    <div class="left icon">
+                        <img src="thumbnail/4 icons.jpg" >
+                    </div>
+                    <div class="right">
+                        <div class="title">
+                            10화#하이라이트#//위험//신혜선의 첫 번쩨 전생에 ...
+                        </div>
+                        <div class="channel">
+                            tvN drama
+                        </div>
+                        <div class="etc">
+                            <span class="viewCount">조회수 5.6만회</span>
+                            •
+                            <span class="uploadTime">17시간 전</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="image">
+                    <img src="thumbnail/5.webp" >
+                </div>
+                <div class="content">
+                    <div class="left icon">
+                        <img src="thumbnail/5 icons.jpg" >
+                    </div>
+                    <div class="right">
+                        <div class="title">
+                            platlist 2023년 상반기 결산! 주인장이 최애하는 팝송 모음 🎉
+                        </div>
+                        <div class="channel">
+                            뮤루밍 Music is Blooming
+                        </div>
+                        <div class="etc">
+                            <span class="viewCount">조회수 19만회</span>
+                            •
+                            <span class="uploadTime">2주 전</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="image">
+                    <img src="thumbnail/6.webp" >
+                </div>
+                <div class="content">
+                    <div class="left icon">
+                        <img src="thumbnail/6 icons.jpg" >
+                    </div>
+                    <div class="right">
+                        <div class="title">
+                            [EN] 에이...이건 해군이잖아 [한국해양대 항해학과] | 전과자 ep.29
+                        </div>
+                        <div class="channel">
+                            ootb STUDIO<span>✔️</span>
+                        </div>
+                        <div class="etc">
+                            <span class="viewCount">조회수 243만회</span>
+                            •
+                            <span class="uploadTime">2주 전</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="image">
+                    <img src="thumbnail/7.webp" >
+                </div>
+                <div class="content">
+                    <div class="left icon">
+                        <img src="thumbnail/7 icons.jpg" >
+                    </div>
+                    <div class="right">
+                        <div class="title">
+                            [#뽕뽕지구오락실] 아침 드라마 엔딩 장면 보는 줄 ㅋㅋㅋ 
+                        </div>
+                        <div class="channel">
+                            디글 :Diggle<span>✔️</span>
+                        </div>
+                        <div class="etc">
+                            <span class="viewCount">조회수 119만회</span>
+                            •
+                            <span class="uploadTime">5개월 전</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="image">
+                    <img src="thumbnail/8.webp" >
+                </div>
+                <div class="content">
+                    <div class="left icon">
+                        <img src="thumbnail/8 icons.jpg" >
+                    </div>
+                    <div class="right">
+                        <div class="title">
+                            [KPOP Playlist]요즘 듣는 신나는 케이팝 노동요⑤
+                        </div>
+                        <div class="channel">
+                            김로라
+                        </div>
+                        <div class="etc">
+                            <span class="viewCount">조회수 24만회</span>
+                            •
+                            <span class="uploadTime">2주 전</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ikea</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        div{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #root{
+            width: 1600px;
+            /* height: 100vh; */
+            margin: 0 auto;
+            /* border: 1px dashed red; */
+            position: relative;
+        }
+        .flex{
+            display: flex;
+            justify-content: space-around;
+            justify-content: center;
+        }
+        #top{
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: auto 800px;
+            font-size: 0.7em;
+            margin-bottom: 20px;
+        }
+        #top > div:hover{
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        #top > div{
+            flex: 1;
+            padding: 10px 30px;
+            width: fit-content;
+        }   
+        #top > div:first-child{
+            text-align: right;
+        }
+        #top > div:last-child{
+            text-align: left;
+        }
+
+        .menuBtn{
+            font-size: 2em;
+            position: absolute;
+            left:70px;
+            top: 50px;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            line-height: 36px;
+            text-align: center;
+            user-select: none; /*드레그가 안된다.*/
+            /* border: 1px dashed orange; */
+        }
+        .cycle:hover{
+            background-color: rgb(223, 223, 223);
+            border-radius: 50%;
+        }
+        #menu{
+            top:80px;
+            font-size: 0.8em;
+        }
+        #header_main{
+            padding-top: 20px;
+            /* border: 1px dashed blue; */
+            justify-content: space-between;
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            background-color: white;
+
+        }
+        #header_main > #search{
+            padding: 5px 15px;
+            width: 1100px;
+            line-height: 36px;
+            border: 1px solid lightgray;
+            border-radius: 50px;
+        }
+        #search{
+            width: 1000px;
+            background-color: rgba(169, 169, 169, 0.3);
+        }
+        #search > input{
+            font-size: 1em;
+            padding-left: 5px;
+            width: 94%;
+            height: 100%;
+            border: unset;
+            line-height: 36px;
+            background-color: transparent;
+        }
+        input{
+            all: unset;
+        }
+  
+        #search:hover{
+            background-color: rgb(216, 215, 215);
+            border: unset;
+        }
+        #login > div{
+            padding: 5px 15px;
+            line-height: 34px;
+        }
+        #login > div:first-child{
+            font-size: 0.8em;
+        }
+        #login > div:first-child:hover{
+            background-color: rgba(169, 169, 169, 0.3);
+            border-radius: 30px;
+
+        }
+        #bottom{
+            justify-content: space-between;
+            /* border: 1px dashed pink; */
+            border-bottom: 1px solid darkgray;
+            padding-bottom: 15px;
+            margin-bottom: 50px;
+        }
+        #bottom ul{
+            cursor: pointer;
+            list-style: none;
+        }
+        #left li:hover{
+            text-decoration: underline;
+        }
+        #right li:first-child{
+            padding-right: 30px;
+        }
+        #bottom ul:first-child{
+            padding: 0;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+        #bottom li{
+            padding-right: 15px;
+        }
+        aside{
+            box-sizing: border-box;
+            /* border: 1px dashed blue; */
+            width: 480px;
+            height: 100%;
+            position: absolute;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: white;
+            overflow-y: auto;
+            z-index: 5;
+        }
+        aside.hidden{
+            left: -500px;
+        } 
+    
+        aside ul:nth-child(3){
+            margin-top: 20px;
+        }
+        aside ul{
+            list-style: none;
+            margin-left: 110px;/*메뉴 왼쪽 공간*/
+        }
+        #aside_top{
+            padding: 10px 30px;
+            background-color: white;
+            position: sticky;
+            top: 0px;
+        }  
+        #aside_top > div:first-child{
+            flex: 1;
+            /* border: 1px dashed purple; */
+            font-weight: bold;
+            text-align: center;
+            line-height: 50px;
+        }
+        #aside_top > div:last-child{
+            flex: 5;
+            /* border: 1px dashed darkkhaki; */
+            padding: 5px 70px;
+
+        }
+        aside > #s1 > li{ 
+            margin: 30px auto;
+            font-weight: bold;
+            font-size: 2.1em;
+        }
+        aside > #s2 > li{ 
+            font-weight: bold;
+            margin: 10px auto;
+            font-size: 1em;
+        }
+        aside > #s3 > li{ 
+            margin: 8px auto;
+            font-size: 1em;
+        }
+        #s3{
+            margin-top: 20px;
+        }
+        aside li:hover{
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        #s4{
+            margin: auto;
+            padding-right: 30px;
+        }
+        #s4  div{
+            display: block;
+            border: 1px solid black;
+            border-radius: 30px;
+            padding: 10px;
+            margin: 15px;
+        }
+        #s4 li:hover{
+            text-decoration: none;
+        }
+        #s4  div:hover{
+            box-sizing: border-box;
+            border: 2px solid black;
+            cursor: pointer;
+        }
+        main #center{
+            margin: auto;
+            width: 1600px;
+            height: 600px;
+            /* border: 2px dashed yellow; */
+        }
+        #center video{
+            left: 0;
+        }
+        #center  #yellow{
+            padding: 30px 45px;
+            width: 650px;
+            height: 100%;
+            background-color: #FFDB00;
+        }
+        #yellow p:first-child{
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        #yellow p:nth-child(2){
+            font-size: 0.9em;
+        }
+        #yellow p:last-child{
+            margin-top: 30px;
+            border: 1px solid black;
+            background-color: black;
+            color: white;
+            font-weight: bold;
+            font-size: 0.8em;
+            border-radius: 30px;
+            width: fit-content;
+            padding: 10px;
+        }
+        #yellow p:last-child:hover{
+            cursor: pointer;
+            background-color: rgba(0, 0, 0, 0.8)
+        }
+        footer p{
+            font-weight: bold;
+            margin: 15px 30px;
+        }
+        #new{
+            color: white;
+            text-align: center;
+            font-weight: bold;
+            font-size: 0.9em;
+            margin: 0;
+        }
+        .box:first-child{
+            background-color: #CA5008 ;
+            padding: 30px;
+        }
+        .box{
+            /* border: 1px dashed orangered; */
+            width: 230px;
+            height: 300px;
+            margin: 10px;
+            cursor: pointer;
+        }
+        .picture > p:hover{
+            background-color:rgba(226, 223, 223, 0.825);
+        }
+        #orange > span{
+            display: flex;
+            padding: 10px;
+            width: 20px;
+            height: 20px;
+            line-height: 15px;
+            background-color: white;
+            font-weight: bold;
+            font-size: 1.1em;
+            border-radius: 50px;
+            margin-top: 150px;
+            margin-bottom: 15px;
+            align-content: center;
+        }
+        #orange > span:hover{
+            background-color:rgba(255,255,255, 0.9);
+        }
+        #orange:hover > p{
+            text-decoration: underline;
+        }
+        footer .picture{
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 100% auto;
+            height: 300px;
+            width: 230px;
+            overflow: hidden;
+        }
+        .picture p{
+            background-color: white;
+            border-radius: 30px;
+            margin: auto;
+            margin-top: 230px;
+            text-align: center;
+            width: 100px;
+            height: 35px;
+            line-height: 35px;
+        }
+        #Q > span{
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 15px;
+            background-color: #FFDB00;
+            border-radius: 50%;
+            box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+            font-size: 1.2em;
+        }
+        #Q > span:hover{
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 15px;
+            background-color: rgb(247, 229, 129);
+            border-radius: 50%;
+            box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+            font-size: 1.2em;
+        }
+        #closeBtn{
+            all: unset;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- <input type="color"> -->
+    <div id="top" class="flex">
+        <div>📞쉽고 편한 전화 부문, 헤이오더</div>
+        <div>🧺베스트 셀러</div>
+    </div>
+    <div id="btn">
+        <div class="cycle menuBtn"><span>≡</span></div>
+        <div id='menu' class="menuBtn">메뉴</div>
+    </div>
+
+    <aside id="aside" class="hidden">
+        <div id="aside_top" class="flex">
+            <div style="text-align: right; padding-right: 20px;">
+                <button id="closeBtn">✕</button>
+            </div>
+            <div style="cursor: pointer;"><img src="ikea/ikea-logo.svg" alt=""></div>
+        </div>
+        <ul id="s1">
+            <li>모든 제품</li>
+            <li>공간별 쇼핑하기</li>
+            <li>특별한 가격</li>
+            <li>홈 액세서리</li>
+            <li>서비스</li>
+        </ul>
+        <ul id="s2">
+            <li>신제품</li>
+            <li>아이디어</li>
+            <li>새로운 소식</li>
+        </ul>
+        <ul id="s3">
+            <li>매장안내</li>
+            <li>쉽고 편한 전화 주문, 헤이오더</li>
+            <li>IKEA Live</li>
+            <li>IKEA Family</li>
+            <li>LKEA for Business</li>
+            <li>고객지원</li>
+            <li>배송조회</li>
+            <li>내 프로필</li>
+        </ul>
+        <ul id="s4" class="flex">
+            <li><div>한국어 ∨</div></li>
+            <li><div>🌐국가 변경</div></li>
+        </ul>
+    </aside>
+
+    <div id="root">
+        <header>
+            <div id="header_main" class="flex">
+                <div id="logo" style="cursor: pointer;">
+                    <img src="ikea/ikea-logo.svg">
+                </div>
+                <div id="search">
+                    🔍
+                    <input type="search" placeholder="검색어 입력">
+                    📷
+                </div>
+                <div id="login" class="flex">
+                    <div>👤 hej! 로그인 또는 가입하기</div>
+                    <div class="cycle">🤍</div>
+                    <div class="cycle">🧺</div>
+                </div>
+            </div>
+            <div id="bottom" class="flex">
+                <div id="left" >
+                    <ul class="flex">
+                        <li>모든 제품</li>
+                        <li>공간별 쇼핑하기</li>
+                        <li>특별한 가격</li>
+                        <li>홈 액세서리</li>
+                        <li>서비스</li>
+                    </ul>
+                </div>
+                <div id="right" >
+                    <ul class="flex">
+                        <li>🚛 우편 번호 입력</li>
+                        <li>🏢 매장선택</li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <main>
+            <div id="center" class="flex">
+                <video style="cursor: pointer;" src="https://www.ikea.com/ext/ingkadam/m/390ada4babcb3163/original/Nytillverkad_launch_30s_16x9.mp4"></video>
+                <div id="yellow">
+                    <p>미래를 담은 클래식한 디자인</p>
+                    <p>IKEA가 창립 80주년을 맞이하며 과거의 아이코닉한 디자인을 엄선해 다시 출시 합니다. 다채로운 컬러와 새로운 소재로 재탄생한 Nytillverkad 뉘틸베르카드 컬렛션을 만나보세요</p>
+                    <p>Nytillverkad 뉘틸베르카드 컬렉션 보러 가기</p>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <p>베스트 카테고리 쇼핑하기</p>
+            <div id="footer_main" class="flex">
+                <div id="orange" class="box">
+                    <p id="new">IKEA 신제품 보러가기</p>
+                    <span> → </span>
+                </div>
+                <div class="box">
+                    <div class="picture" style="background-image: url('ikea/침실.avif');">
+                        <p>침실</p>
+                    </div>
+                </div>
+                <div class="box">
+                      <div class="picture" style="background-image: url('ikea/수납 정리.avif');">
+                        <p>수납/정리</p>
+                    </div>
+                </div>
+                <div class="box">
+                      <div class="picture" style="background-image: url('ikea/홈오피스.avif');">
+                        <p>홈오피스</p>
+                    </div>
+                </div>
+                <div class="box">
+                      <div class="picture" style="background-image: url('ikea/다이닝.avif');">
+                        <p>다이닝</p>
+                    </div>
+                </div>
+                <div class="box">
+                      <div class="picture" style="background-image: url('ikea/거실.avif');">
+                        <p>거실</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <div id="Q"><span>💬</span></div>
+    </div>
+
+    <script>
+        const btn = document.getElementById('Btn')
+        const aside = document.getElementById('aside')
+        const closeBtn = document.getElementById('closeBtn')
+
+        btn.onclick = function(){
+            aside.classList.remove('hidden')
+        }
+        closeBtn.onclick = function(){
+            aside.classList.add('hidden')
+        }
+    </script>
+    
+</body>
+</html>
