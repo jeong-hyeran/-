@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>appendChild</title>
+    <style>
+        .flex{
+            display: flex;
+            list-style: none;
+        }
+        .sb{
+            justify-content: space-between;
+        }
+        .flex > li{
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    <script>
+        const root = document.getElementById('root')
+        const nav = document.createElement('nav') 
+        
+        const menu1 = document.createElement('ul')
+        const li01 = document.createElement('li')
+        const li02 = document.createElement('li')
+        const li03 = document.createElement('li')
+        const li04 = document.createElement('li')
+        const li05 = document.createElement('li')
+
+        li01.innerText = '모든제품'
+        li02.innerText = '공간별 쇼핑하기'
+        li03.innerText = '특별한 가격'
+        li04.innerText = '홈 액세서리'
+        li05.innerText = '서비스'
+
+        menu1.appendChild(li01)
+        menu1.appendChild(li02)
+        menu1.appendChild(li03)
+        menu1.appendChild(li04)
+        menu1.appendChild(li05)
+
+        menu1.classList.add('flex')
+        
+        nav.appendChild(menu1)
+        root.appendChild(nav)
+        
+        const menu2 = document.createElement('ul')
+        const li06 =  document.createElement('li')
+        const li07 =  document.createElement('li')
+        
+        li06.innerText = '우편번호 입력'
+        li07.innerText = '매장선택'
+        
+        menu2.appendChild(li06)
+        menu2.appendChild(li07)
+        
+        menu2.classList.add('flex')
+        nav.classList.add('flex')
+        nav.classList.add('sb')
+        nav.appendChild(menu2)
+        root.appendChild(nav)
+
+        // const menu2 =  document.createElement(menu2)
+        </script>
+    
+</body>
+</html>
