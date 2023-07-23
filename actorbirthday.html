@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>actorBirth.html</title>
+</head>
+<body>
+
+    <h1>10-actorBirth.html</h1>
+    <hr>
+
+    <table border="1" cellpadding="10" cellspacing="0">
+        <thead>
+            <tr>
+                <th>이름</th>
+                <th>생일</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th colspan="2">
+                    <img src="loading.gif">
+                </th>
+            </tr>
+        </tbody>
+    </table>
+
+    <script src="actorBirth.js"></script>
+
+    <script>
+        const tbody = document.querySelector('tbody')
+        const trArray = document.querySelectorAll(tr)
+
+        tbody.innerHTML= ''
+
+        let tag = ``
+            arr.forEach(ob => {
+                tag += `<tr>`
+                tag +=  `<td>${ob.name}</td>`
+                tag +=  `<td>${ob.birth}</td>`
+                tag += `</tr>`
+            });
+            tbody.innerHTML += tag
+        
+
+        trArray.forEach(tr =>tbody.appendChild(tr));
+    </script>
+
+
+</body>
+</html>
