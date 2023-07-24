@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04-opgg_result.html</title>
+    <style>
+        body{
+            width: 1000px;
+        }
+        table{
+            margin: auto;
+            border: 2px solid black;
+            border-collapse: collapse;
+        }
+        th,td{
+            border: 1px solid black;
+            padding: 10px;
+            min-width: 90px;
+        }
+        th{
+            background-color: azure;
+        }
+        th:hover{
+            cursor: pointer;
+            background-color: gray;
+        }
+        .blue{
+            background-color: lightblue;
+        }
+        .red{
+            background-color: lightpink;
+        }
+        #searchTool{
+            border: 2px dashed red;
+            margin: auto;
+            text-align: center;
+            padding: 20px;
+        }
+        #search{
+            all: unset;
+            border-bottom: 2px solid gray ;
+            width: 250px;
+            height: 30px;
+            font-size: 1em;
+        }
+        input:first-child{
+            text-align:start;
+        }
+        input:last-child{
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>04-opgg_result.html</h1>
+    <hr>
+    <div id="searchTool">
+        <input id="search" type="search" value="searchKeyword" placeholder="검색어를 입력하세요">
+        <input id="searchBtn" type="submit" value="검색">
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th order="1" class="user">user <span></span> </th>
+                <th order="1" class="champion">champion <span></span> </th>
+                <th order="1" class="team">team <span></span> </th>
+                <th order="1" class="kill">kill <span></span> </th>
+                <th order="1" class="death">death <span></span> </th>
+                <th order="1" class="assist">assist <span></span> </th>
+                <th order="1" class="damage">damage <span></span> </th>
+                <th order="1" class="cs">cs <span></span> </th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+    <script src="opgg_result.js"></script>
+    <script>
+        const tbody = document.querySelector('tbody')
+
+        function isNumeric(str){
+            return !isNaN(str)
+        }
+
+        function loadHandler(){
+            let tag =``
+            arr.forEach(ob => {
+                const team = ob.team == '블루' ? 'blue' : 'red'
+                tag += `<tr class="${team} ">`
+                tag += `<td class="user">${ob.user}</td>`
+                tag += `<td class="champion">${ob.champion}</td>`
+                tag += `<td class="team">${ob.team}</td>`
+                tag += `<td class="kill">${ob.kill}</td>`
+                tag += `<td class="death">${ob.death}</td>`
+                tag += `<td class="assist">${ob.assist}</td>`
+                tag += `<td class="damage">${ob.damage}</td>`
+                tag += `<td class="cs">${ob.cs}</td>`
+                tag += `</tr>`
+                
+            });
+            tbody.innerHTML += tag
+        }
+        window.onload = loadHandler
+
+        
+        // const user = document.querySelector('th.user')
+        // user.onclick = function(){
+        //     const trList = document.querySelectorAll('tbody > tr')
+        //     const trArray = Array.from(trList)
+        //     // console.log(user)
+        //     trArray.sort((a, b) =>{
+        //         const userA = a.querySelector('td:nth-child(1)').innerText
+        //         const userB = b.querySelector('td:nth-child(1)').innerText
+        //         return userA > userB ? 1 : -1
+        //     })
+            
+        //     trArray.forEach(tr=> tbody.appendChild(tr))
+        // }
+
+        const thList = document.querySelectorAll('th')
+        function sortHandler(event){
+            const className = event.target.className
+
+            const order = +event.target.getAttribute('order')
+
+            
+            document.querySelectorAll('thead span').forEach(span => span.innerText='')
+            const span = event.target.querySelector('span')
+            span.innerText = order > 0 ?'▲':'▼'
+            
+            const trArray = Array.from(document.querySelectorAll('tbody > tr'))
+
+            trArray.sort((a,b) =>{
+                let valueA = a.querySelector('.'+className).innerText
+                let valueB = b.querySelector('.'+className).innerText
+                if(isNumeric(valueA) && isNumeric(valueB)){
+                    valueA = +valueA
+                    valueB = +valueB
+                }
+                let result = (valueA > valueB ? 1 :-1)*order
+                return result
+            })
+            
+            event.target.setAttribute('order', order*-1)
+            trArray.forEach((tr) => tbody.appendChild(tr))
+        }
+        thList.forEach(th => onclick =sortHandler)
+
+        const search = document.getElementById('search')
+        const searchBtn = document.getElementById('searchBtn')
+        sesrchBtn.onclick = function(){
+            const trArray = Array.from(document.querySelectorAll(tr))
+            trArray.forEach(tr =>{
+                const username = tr.querySelector('.user').innerText
+                if(username.inCludes(searchKeyword) == false){
+                    
+                }else{
+
+                }
+            })
+        }
+
+
+    </script>
+   
+</body>
+</html>
