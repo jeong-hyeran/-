@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>06-fliter.html</title>
+    <style>
+        table{
+            border: 2px solid black;
+            border-collapse: collapse;
+            margin:  10px;
+        }
+        th,td{
+            padding: 10px;
+            border: 1px solid black;
+        }
+        .flex{
+            display: flex;
+        }
+        fieldset{
+            margin: 10px;
+        }
+        .hidden{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>06-fliter.html</h1>
+    <hr>
+
+    <div class="flex">
+        <fieldset class="ageFilters">
+            <legen>연령</legend>
+            <p><label> <input type="checkbox" name="10">10대</label></p>
+            <p><label> <input type="checkbox" name="20">20대</label></p>
+            <p><label> <input type="checkbox" name="30">30대</label></p>
+        </fieldset>
+        <fieldset class="genderFilters">
+            <legend>성별</legend>
+            <p><label> <input type="checkbox" name="men">남성</label></p>
+            <p><label> <input type="checkbox" name="women">여성</label></p>
+        </fieldset>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <td>이름</td>
+                <td>나이</td>
+                <td>성별</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="name">이지은</td>
+                <td class="age">31</td>
+                <td class="gender">여성</td>
+            </tr>
+            <tr>
+                <td class="name">김지수</td>
+                <td class="age">28</td>
+                <td class="gender">여성</td>
+            </tr>
+            <tr>
+                <td class="name">박지민</td>
+                <td class="age">27</td>
+                <td class="gender">남성</td>
+            </tr>
+            <tr>
+                <td class="name">이민호</td>
+                <td class="age">36</td>
+                <td class="gender">남성</td>
+            </tr>
+            <tr>
+                <td class="name">하니</td>
+                <td class="age">18</td>
+                <td class="gender">여성</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        //연령 필터(가격 필터와 유사함)
+        const ageBoxes = document.querySelectorAll('.ageFilters input')
+        const ageFilters = Array.from(ageBoxes)
+        function ageFiltersHandler (){
+            // 체크된 박스의 name의 속성을 숫자로 바꿔서 새로운배열을 구성한다.
+            // [input, input, input] => [10, 20, 30]
+            const checkedAgeBoxes = ageFilters.filter(box=>box.checked)
+                                                .map(box => +box.name)
+            console.log(checkedAgeBoxes)
+            // 문서내 tr을 불러온다.
+            const trList = document.querySelectorAll('tbody > tr')
+
+            trList.forEach(tr =>{
+                // 현재 줄 주번째 칸의 나이를 숫자로 저장
+                const age = +tr.querySelector('td:nth-child(2)').innerText
+
+                // 구한 나이가 체크된 박스의 구간 사이에 포함되는지 개수를 구함
+                const trueSize = checkedAgeBoxes.map(a => a <= age && age < a +10)
+                                .filter(b => b).length
+
+                //체크된 박스가 하나도 없으면 모두 드러낸다.
+                if(checkedAgeBoxes.length == 0) tr.classList.remove('hidden')
+                
+                //현재 tr이 체크된 연령대 구간에 포함된다면 드러낸다.
+                else if(trueSize != 0)          tr.classList.remove('hidden')
+
+                // 현재tr이 체크된 연령대 구간에 '하나도' 포함되지 않으면 숨긴다.
+                else                             tr.classList.add('hidden')
+            })
+
+        }
+        ageFilters.forEach(box => box.onclick = ageFiltersHandler)
+    </script>
+    
+</body>
+</html>
