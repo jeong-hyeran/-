@@ -1,0 +1,239 @@
+@charset 'utf-8';
+body{
+    padding: 0;
+    margin: 0;
+}
+.flex{
+    display: flex;
+}
+.sb{
+    justify-content: space-between;
+}
+ul{
+    margin: 0;
+    padding: 0;
+}
+li{
+    cursor: pointer;
+}
+#top > ul:last-child > li:first-child{
+    font-size: 1rem;
+}
+#top > ul:last-child > li:nth-child(2){
+    font-size: 1.1rem;
+    line-height: 1.1rem;
+}
+#top > ul:last-child {
+    padding: 10px;
+    font-size: 1.1rem;
+}
+header li{
+    list-style: none;
+    padding: 5px 10px;
+}
+#top{
+    background-color: #3f63bf;
+    color: white;
+    padding: 0 400px;
+    height: 50px;
+}
+#top > ul:first-child > li:first-child{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+#top > ul:first-child > li:not(:first-child){
+    line-height: 20px;
+    font-size: 0.8rem;
+    border-left: 0.5px solid  rgba(255, 255, 255, 0.5);
+    margin: 15px 0;
+    padding: 0 5px;
+    color: rgba(255, 255, 255, 0.5);
+
+}
+#bottom{
+    padding: 10px 400px 0 400px;
+    border-bottom: 0.8px solid darkgray;
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+#bottom > ul > li{
+    /* border: 1px dashed blue; */
+    height: 22px;
+}
+#bottom > ul > li:hover{
+    color: #3f63bf;
+    border-bottom: 2px solid #3f63bf; 
+    margin-bottom: -2px;
+}
+#frame{
+    margin: auto;
+    width: 1100px;
+    padding: 5px;
+    position: relative;
+    /* border: 1px dashed red; */
+}
+#date{
+    margin-top: 10px;
+    padding: 10px 0;
+    border-bottom: 0.8px solid black ;
+}
+#date li{
+    list-style: none;
+    font-size: 0.8rem;
+    padding: 0 4px;
+}
+#date li:not(:first-child){
+    border-left:  0.8px solid darkgray;
+}
+#date div:first-child{
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+#left{
+    flex: 0.7;
+    padding: 10px 0 10px 0;
+    margin-right: 20px;
+}
+#left li{
+    list-style: none;
+    font-size: 0.8rem;
+    font-weight:bolder;
+    padding:8px 0;
+}
+#left li:first-child{
+    font-size: 1rem;
+    border-bottom: 1px solid black;
+    padding: 10px 0;
+}
+#left li:last-child{
+    border-bottom: 1px solid darkgrey;
+}
+#banner{
+    padding: 20px 10px 10px 0;
+}
+#left img{
+    width: 80px;
+    padding: 0px 10px 10px 0;
+}
+#center{
+    flex: 6;
+    /* border: 1px dashed blue; */
+    border-left: 1px solid darkgrey;
+    border-right: 1px solid darkgrey;
+    padding: 20px 20px;
+}
+#right{
+    flex: 2;
+    /* border: 1px dashed green; */
+}
+.item{
+    padding: 20px 0;
+    border-top: 0.8px solid darkgrey;
+}
+.item img{
+    width: 120px;
+    height: 80px;
+}
+article{
+    padding-left:15px;
+}
+article p{
+    margin: 0;
+    font-weight: bold;
+}
+.text{
+    color: darkgray;
+    padding: 5px 0;
+    font-size: 0.75rem;
+}
+.name{
+    color: rgb(146, 146, 146);
+    padding: 5px 0;
+    font-size: 0.8rem;
+}
+.name div{
+    padding-right: 10px;
+    border-right: 0.5px solid darkgrey;
+}
+.name button{
+    all: unset;
+    font-size: 0.5rem;
+    margin: 0 10px;
+    margin-top: 1.5px;
+    border: 0.4px solid rgba(0, 0, 255,0.5);
+    border-radius:3px;
+    height: fit-content;
+    padding: 0 2px;
+    align-items: center;
+    font-weight: bold;
+}
+#right{
+    box-sizing: border-box;
+    padding: 18px;
+}
+#right_top{
+    padding: 5px 0;
+}
+#right p{
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin: 0;
+    padding: 0;
+}
+#right_top_1 > div:last-child{
+    font-size: 0.7rem;
+}
+#view_item{
+    padding-top: 8px;
+    padding-bottom: 2px;
+    /* border: 1px dashed gold; */
+}
+#headlineNews{
+    padding: 5px 0 10px 5px;
+    margin-right: 10px;
+    font-size: 0.8rem;
+    border-bottom: 1.2px solid rgb(223, 221, 221);
+} 
+#view_item:last-child > #headlineNews{
+    border-bottom: none ;
+    /* border: 1px dashed gold; */
+}
+#headlineNews > div:first-child{
+    padding: 5px 0;
+    font-size: 0.7rem;
+}
+#headlineNews > div:nth-child(2){
+    padding: 2px;
+
+}
+#headlineNews img{
+    height: 18px;
+    border-radius: 50%;
+    margin-right: 5px;           
+}
+#headlineimg img{
+    height: 78px;
+}
+.title:hover{
+    text-decoration: underline;
+}
+section{
+    border: 1px solid gray;
+    text-align: center;
+    height: 2.3rem;
+    line-height: 2.3rem;
+    font-size: 0.8rem;
+}
+#remocon{
+    position: absolute;
+    bottom: 25px;
+    right: -50px;
+}
+#remocon > div:first-child{
+    margin-bottom:-1px ;
+}
+#remocon > div{
+    border: 1px solid gray;
+    font-size: 1.5rem;
+    padding: 3px;
+}
