@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>정혜란3A</title>
+    <link rel="stylesheet" href="정혜란.css">
+    <style>
+        /* body{
+            padding: 0;
+            margin: 0;
+        }
+        div{
+            padding: 0;
+            margin: 0;
+        }
+        .flex{
+            display: flex;
+        }
+        .sb{
+            justify-content: space-between;
+        }
+        header{
+            position: sticky;
+            top: 0px;
+            box-sizing: border-box;
+            padding: 0 370px;
+            height: 92px;
+            border-bottom: 1px solid lightgrey;
+            z-index: 10;
+            background-color: white;
+        }
+        #logo{
+            height: 92px;
+            border-right:  1px solid lightgrey;
+        }
+        #logo > img{
+            display: block;
+            width: 250px;
+            margin: 22px 35px 20px 5px;
+        }
+        #top li, #top ul, #top ol{
+            padding: 0;
+            margin: 0;
+        } 
+        #top li{
+            list-style: none;
+            cursor: pointer;
+        }
+        #top #first{
+            box-sizing: border-box;
+            border-bottom:  1px solid lightgrey;
+            height: 40px;
+            padding: 10px 7px 10px 10px;
+            height: fit-content;
+        }
+        #right{
+            width: 860px;
+            border-right: 1px solid lightgrey;
+        }
+        #first{
+            height: 40px;
+            padding: 0;
+        }
+        #link li{
+            text-align: center;
+            padding-top: 2px;
+        }
+        #link li:not(:first-child){
+            padding-left: 5px;
+        }
+        #search li{
+            font-size: 0.8rem;
+            margin: 0px 10px;
+            height: 25px;
+            line-height: 25px;
+        }
+        #search li:hover{
+            color: rgb(3, 138, 138);
+            background-color: #2525254f;
+        }
+        #search li:last-child{
+            padding-right: 0;
+        }
+        #search > li > input{
+            width: 125px;
+            height: 25px;
+        }
+        #nav{
+            margin: 0;
+        }
+        #nav> ul > li{
+            font-size: 0.8rem;
+            color: rgb(61, 61, 61);
+            padding: 14px 24px;
+            margin: 0;
+            position: relative;
+        }
+        #nav > ul> li:not(:last-child){
+            border-right: 1px solid lightgray;
+        }
+        #nav > ul> li> ol > li:hover{
+            background-color: black;
+            color: white;
+            transition-duration: 0.3s;
+        }
+        #nav > ul> li> ol > li{
+            padding: 0;
+            height: 40px;
+            line-height: 40px;
+            padding: 5px 0px 5px 15px;
+            font-size: 0.8rem;
+            border-bottom: 1px solid #a4a2a2;
+            color: #a4a2a2;
+        }
+        #nav> ul > li:hover{
+            color: rgb(3, 138, 138);
+            background-color: #2525254f;
+        }
+        #nav> ul > li:hover > ol{
+            display: block;
+        }
+        #nav ol{
+            display: none;
+            box-sizing: border-box;
+            position: absolute;
+            top: 46px;
+            left: 0;
+            width: 164px;
+            padding: 0;
+            margin: 0;
+            background-color: #545454;
+        }
+        main{
+            padding: 0;
+            margin: auto;
+            width: 1170px;
+            
+        }
+        
+        #main_img{
+            text-align: center;
+            height: 400px;
+            width: 1150px;
+            position: relative;
+        }
+        #slide{
+            position: absolute;
+            border: 1px solid #f6f6f6;
+            background-color: #f6f6f6;
+            width: 450px;
+            height: 58px;
+            bottom: 0px;
+            right: 0;
+        }
+        span{
+            cursor: pointer;
+        }
+        #sq span:first-child{
+            color: #0087c8;
+        }
+        #sq{
+            margin: 18px 20px;
+            color: lightgrey;
+            font-size: 0.9rem;
+        }
+            
+        #slide button:hover{
+            background-color: #9ac9e1;
+        }
+        #slide button{
+            all: unset;
+            box-sizing: border-box;
+            margin: 1px;
+            background-color: #0087c8;
+            color: white;
+            height: 56px;
+            width: 55px;
+            font-size: 1.8rem;
+            padding-bottom: 5px;
+            cursor: pointer;
+        }
+        #slide button:last-child{
+            margin-left: -6px;
+        }
+        #remocon{
+            position: fixed;
+            right: 295px;
+            top: 110px;
+            font-size: 0.7rem;
+            text-align: center;
+            box-sizing: border-box;
+            background-color: white;
+        }
+        #remocon .icon{
+            font-size: 1.9rem;
+        }
+        .remocon_item:hover{
+            cursor: pointer;
+            color: rgb(16, 113, 118);
+     
+        }
+        .remocon_item{
+            height: 70px;
+            width: 65px;
+            border: 1px solid rgb(152, 152, 152);
+        }
+        .remocon_item:not(:first-child){
+            margin-top: -1px;
+            padding-top: 3px;
+        }
+        .pro{
+            flex: 2;
+            border: 1px solid darkgray;
+        }
+        .pro section {
+            padding: 20px 15px;
+            font-size: 0.9rem;
+        }
+        .pro p{
+            font-weight: bold;
+            color: rgb(0, 60, 134);
+        }
+        .pro article{
+            color: #545454;
+        }
+    
+        .pro_top{
+            margin-top: 50px;
+
+        }
+
+        .item{
+            flex: 1;
+            margin-left:15px ;
+        }
+        .item > article > div:hover{
+            cursor: pointer;
+            color: rgb(16, 113, 118);
+     
+        }
+        .item_top{
+            display: flex;
+            justify-content: space-between;
+        }
+    
+        .item_top > .yellow {
+            display: flex;
+            flex: 1;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #FFE400;
+            font-weight: bold;
+            color: #545454;
+        }
+        .item_top > .gray {
+            display: flex;
+            flex: 1;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #D7D7D7;
+            font-weight: bold;
+            color: white;
+        
+        }
+        .item_top > .blank {
+            display: flex;
+            flex: 1;
+            justify-content: space-between;
+            background-color:white;
+        }
+
+        .item > section{
+            padding: 5px;
+        }
+        .item > .pro_article:last-child{
+            border-bottom: none;
+        }
+        .item > .pro_article{
+            justify-content: space-between;
+            padding-bottom: 5px;
+            margin: 15px;
+            font-size: 0.75rem;
+            border-bottom: 1px solid gray;
+            color: #545454;
+        }
+        .item > .pro_article > div:first-child{
+            width: 237px;
+            font-weight: bold;
+        }
+        .item > .pro_article > div:nth-child(2){
+            width: 25px;
+            text-align: left;
+            font-weight: bold;
+            font-size: 0.8rem;
+            color: rgb(0, 105, 128);
+        }
+        
+        #pro_middle{
+            justify-content: space-evenly;
+            margin-top: 50px;
+        }
+        .notice{
+            justify-content: space-between;
+            padding-bottom: 7px;
+            margin: 7px;
+            font-size: 0.9rem;
+            border-bottom: 1px solid gray;
+            color: #545454;
+        }
+        .notice:last-child{
+            border-bottom: none;
+        }
+        .notice > div:first-child{
+            width: fit-content;
+        }
+        .notice > div:first-child > div:nth-child(2){
+            width: fit-content;
+            font-weight: bold;
+            padding-left: 10px;
+            color: rgb(0, 105, 128);
+        }
+        .wrap{
+            padding: 50px 0;
+        }
+ 
+        .wrap .item:first-child{
+            margin: 0;
+        }
+        .image:last-child{
+            border-bottom: unset;
+        }
+        .image{
+            margin: 0 15px;
+            padding: 10px 0;
+            border-bottom: 1px solid grey;
+        }
+        .image img{
+            flex: 2;
+            height: 90px;
+            min-width: 136px;
+        }
+        .image  p{
+            margin: 5px 0;
+        }
+        .image  article{
+            flex: 3;
+            padding: 0 5px 0 15px;
+            font-size: 0.8rem;
+        }
+        .image .date{
+            padding: 5px 0;
+        }
+
+  
+
+        #company{
+            padding-top: 50px;
+            justify-content: space-evenly;
+        }
+        footer{
+            box-sizing: border-box;
+            margin-top:30px;
+            height: 230px;
+            background-color: #313131;
+            padding: 0 370px;
+            color: white;
+        }
+        footer article{
+            padding: 10px;
+            width: 265px;
+        }
+        footer> article > p > span{
+            color: lightblue;
+        }
+        footer p{
+            font-weight: bold;
+        }
+        footer div{
+            font-size: 0.8rem;
+            padding: 5px 0;
+            color: #9b9b9b;
+        }
+        footer article:first-child{
+            width: 250px;
+            margin-right: 30px;
+        }
+        footer > article:not(:first-child) > p{
+            padding-bottom: 20px;
+            border-bottom: 1px solid #9b9b9b;
+        }
+        footer > article:first-child > p{
+            font-size: 1.5rem;
+
+        } */
+        </style>
+</head>
+<body>
+
+    <header>
+        <div id="top" class="flex">
+
+            <div id="logo">
+                <img src="image/로고.png" >
+            </div>
+
+            <div id="right">
+                <div id="first" class="flex sb">
+                    <ul id="link" class="flex">
+                        <li><img src="image/페이스북.png"></li>
+                        <li><img src="image/밴드.png"></li>
+                        <li><img src="image/P.png"></li>
+                        <li><img src="image/유튜브.png"></li>
+                    </ul>
+                    <div>
+                        <ul id="search" class="flex">
+                            <li>로그인</li>
+                            <li>회원가입</li>
+                            <li><input type="search" placeholder="검색"></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div id="nav">
+                    <ul class="flex">
+                        <li>이벤트</li>
+                        <li>공지▼
+                            <ol>
+                                <li>공지사항</li>
+                                <li>요청/건의</li>
+                            </ol>
+                        </li>
+                        <li>메인리뷰▼
+                            <ol>
+                                <li>PC</li>
+                                <li>모바일</li>
+                                <li>디스플레이</li>
+                                <li>게임</li>
+                                <li>웹진</li>
+                                <li>DP DB</li>
+                            </ol>
+                        </li>
+                        <li>회원리뷰▼
+                            <ol>
+                                <li>게임</li>
+                                <li>PC</li>
+                                <li>모바일</li>
+                                <li>디스플레이</li>
+                                <li>기타</li>
+                                <li>필드테스트</li>
+                            </ol>
+                        </li>
+                        <li>소식▼<ol>
+                            <li>스폰서</li>
+                            <li>PC</li>
+                            <li>모바일</li>
+                            <li>디스플레이</li>
+                            <li>게임</li>
+                            <li>좋은정보</li>
+                        </ol>
+                    </li>
+                        <li>게임▼
+                            <ol>
+                                <li>게임게시판</li>
+                                <li>게임갤러리</li>
+                                <li>회원게임리뷰</li>
+                                <li>게임할인정보</li>
+                                <li>게임자료실</li>
+                                <li>게임평점</li>
+                                <li>게임번역정보</li>
+                            </ol>
+                        </li>
+                        <li>커뮤니티▼
+                            <ol>
+                                <li>자유게시판</li>
+                                <li>자유갤러리</li>
+                                <li>H/W게시판</li>
+                                <li>H/W갤러리</li>
+                                <li>H/W견적</li>
+                                <li>종합Q&A</li>
+                                <li>플웨즈자료실</li>
+                                <li>A/S평점</li>
+                                <li>토론&이슈</li>
+                            </ol>
+                        </li>
+                        <li>장터▼
+                            <ol>
+                                <li>회원장터</li>
+                                <li>방출&기부</li>
+                            </ol>
+                        </li>
+                        <li>특가</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div id="remocon">
+        <div class="remocon_item">
+            <div class="icon">🪪</div>
+            <div>로그인</div>
+        </div>
+        <div class="remocon_item">
+            <div class="icon">📃</div>
+            <div>회원가입</div>
+        </div>
+        <div class="remocon_item">
+            <div class="icon">🗝️</div>
+            <div>ID/PASS찾기</div>
+        </div>
+    </div>
+    <main>
+        
+        <div id="main_img">
+            <img src="image/메인 이미지.jpg">
+            <div id="slide" class="flex sb">
+                <div id="sq">
+                    <span>■</span>
+                    <span>■</span>
+                    <span>■</span>
+                    <span>■</span>
+                </div>
+                <div>
+                    <button><</button>
+                    <button>></button>
+                </div>
+            </div>
+        </div>
+
+        <section>
+            <div id="main_pro">
+                <div class="pro_top flex">
+                    <div class="pro flex">
+                        <img src="image/하드.jpg">
+                        <section>
+                                <p>GIGABYTE GeForce RTX 4060 Ti Gaming OC D...</p>
+                                <article>
+                                        NVIDIA RTX 4000시리즈의 메인 스트림의 시작이라고 할 수 있는 RTX 4060 Ti가 출시되었습니다. 성능은 메인스트림에 맞으나 가격이 소비자의 기대에 크게 벗어나 판매량 부진을 껵고 있
+                                </article>
+                        </section>
+                    </div>
+
+                    <div class="item">
+                        <div class="item_top">
+                            <div class="yellow">
+                                <div>이벤트 & 특가</div>
+                                <div>+</div>
+                            </div>
+                            <div class="gray">
+                                <div>플웨즈 공지</div>
+                                <div>+</div>
+                            </div>
+                        </div>
+                        <article class="pro_article flex">
+                            <div>> WD_BLACK AN1500 SSD 댓글 이벤트</div>
+                            <div>29</div>
+                            <div class="date">2020-12-23</div>
+                        </article>
+                        <article class="pro_article flex">
+                            <div>> 씨게이트 바라쿠다 2TB 최저가 맞추기</div>
+                            <div>815</div>
+                            <div class="date">2018-11-21</div>
+                        </article>
+                        <article class="pro_article flex">
+                            <div>> 컬러풀 삼행시 짓고 LOL 결승가자! 댓글</div>
+                            <div>11</div>
+                            <div class="date">2018-10-23</div>
+                        </article>
+                        <article class="pro_article flex">
+                            <div>> (재선정)씨게이트 14TB HDD 런칭 기념</div>
+                            <div>159</div>
+                            <div class="date">2018-10-19</div>
+                        </article>
+                        <article class="pro_article flex">
+                            <div>> 컬러풀 CN600S SSD 240GB 퀴즈 이벤</div>
+                            <div>78</div>
+                            <div class="date">2018-10-16</div>
+                        </article>
+                    </div>
+
+                </div>
+                <div id="pro_middle" class="flex">
+                    <div><img src="image/wrap 1.jpg"></div>
+                    <div><img src="image/wrap 2.jpg"></div>
+                    <div><img src="image/wrap 3.jpg"></div>
+                
+                </div>
+                <div id="pro_bottom">
+                    <div class="pro_top flex">
+                        <div class="pro flex">
+                            <section>
+                                <article>
+                                    <p>[네이버] 알파스캔, 27인치 IPS 165Hz 가성비 최고..</p>
+                                    <div>
+                                        (주)알파스캔디스플레이가 뛰어난 가성비로 호평받고 있는 콘퀘스트 게이밍 시리즈의 27인치 모니터 신제품을 발표했다. 신제품'27F90G 게이밍 165'는 FHD 해상도의 보더리스 
+                                    </div>
+                                </article>
+                            </section>
+                            <img src="image/모니터.jpg">
+                        </div>
+    
+                        <div class="item">
+                            <div class="item_top">
+                                <div class="yellow">
+                                    <div>H/W 견적</div>
+                                    <div>+</div>
+                                </div>
+                                <div class="blank"></div>
+                            </div>
+                            <article  class="notice flex">
+                                <DIV>
+                                    <div>> 메인컴퓨터 구입 및 견적 문의.</div>
+                                    <div></div>
+                                </DIV>
+                                <div class="date">2020-12-23</div>
+                            </article>
+                            <article  class="notice flex">
+                                <div class="flex">
+                                    <div>> 요즘 완제품이 더 싼 것 같네요..</div>
+                                    <div>1</div>
+                                </div>
+                                <div class="date">2020-12-23</div>
+                            </article>
+                            <article  class="notice flex">
+                                <div class="flex">
+                                    <div>> 고수님들 도와주세요ㅠ 컴맹 살려주십시</div>
+                                </div>
+                                <div class="date">2021-02-06</div>
+                            </article>
+                            <article  class="notice flex">
+                                <div class="flex">
+                                    <div>> 견적 봐주시면 감사하겠습니당 ㅠㅠ음악</div>
+                                    <div>2</div>
+                                </div>
+                                <div class="date">2020-09-18</div>
+                            </article>
+                            <article  class="notice flex">
+                                <div class="flex">
+                                    <div>> 가볍게 구성을 한 번 해보았습니다.</div>
+                                </div>
+                                <div class="date">2020-09-18</div>
+                            </article>
+                            
+                        </div>
+    
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="wrap flex">
+
+            <div class="item">
+                <div class="item_top">
+                    <div class="yellow">
+                        <div>∨ H/W게시판</div>
+                        <div>+</div>
+                    </div>
+                </div>
+                <article  class="notice flex">
+                    <div>
+                        <div> AMD 시스템에 사용하는 그래픽카..</div>
+                        <div></div>
+                    </div>
+                    <div class="date">2020-12-23</div>
+                </article>
+                <article  class="notice flex">
+                    <div>
+                        <div> AMD 시스템에 사용하는 그래픽카..</div>
+                        <div></div>
+                    </div>
+                    <div class="date">2020-12-23</div>
+                </article>
+                <article  class="notice flex">
+                    <div>
+                        <div> AMD 시스템에 사용하는 그래픽카..</div>
+                        <div></div>
+                    </div>
+                    <div class="date">2020-12-23</div>
+                </article>
+                <article  class="notice flex">
+                    <div>
+                        <div> AMD 시스템에 사용하는 그래픽카..</div>
+                        <div></div>
+                    </div>
+                    <div class="date">2020-12-23</div>
+                </article>
+                <article  class="notice flex">
+                    <div>
+                        <div> AMD 시스템에 사용하는 그래픽카..</div>
+                        <div></div>
+                    </div>
+                    <div class="date">2020-12-23</div>
+                </article>
+            </div>
+
+            <div class="item">
+                <div class="item_top">
+                    <div class="yellow">
+                        <div>H/W 견적</div>
+                        <div>+</div>
+                    </div>
+                    <div class="gray">
+                        <div>H/W 견적</div>
+                        <div>+</div>
+                    </div>
+                </div>
+                <article  class="image flex">
+                    <div class="flex">
+                        <img src="image/리뷰 1.jpg">
+                        <article>
+                            <p>다크에덴 SD CBT</p>
+                            <div>가크에덴IP로 귀여운 SD버전 어떻게 나올까궁금 했는데 기대 이상</div>
+                            <div class="date">2023-07-26</div>
+                        </article>
+                    </div>
+                </article>
+                <article  class="image flex">
+                    <div class="flex">
+                        <img src="image/리뷰 2.jpg">
+                        <article>
+                            <p>다크에덴 SD CBT</p>
+                            <div>가크에덴IP로 귀여운 SD버전 어떻게 나올까궁금 했는데 기대 이상</div>
+                            <div class="date">2023-07-26</div>
+                        </article>
+                    </div>
+                </article>
+            </div>
+
+            <div class="item">
+                <div class="item_top">
+                    <div class="yellow">
+                        <div>H/W 갤러리</div>
+                        <div>+</div>
+                    </div>
+                    <div class="gray">
+                        <div>자유갤러리</div>
+                        <div>+</div>
+                    </div>
+                </div>
+                <article  class="image flex">
+                    <div class="flex">
+                        <img src="image/blank.jpg">
+                        <article>
+                            <p>외장하드 SSD 추천 씨데이트</p>
+                            <div>디지털 콘텐츠 생산과 사용이 일상화된 현대를 살아가는/div>
+                            <div class="date">2022-06-19</div>
+                        </article>
+                    </div>
+                </article>
+                <article  class="image flex">
+                    <div class="flex">
+                        <img src="image/의자.jpg">
+                        <article>
+                            <p>에이픽스</p>
+                            <div>제가 써본 게이미 의자중에 쵝오!!</div>
+                            <div class="date">2021-11-29</div>
+                        </article>
+                    </div>
+                </article>
+            </div>
+        </div>
+
+        <div id ="wrap_bottom" class="flex">
+            <div class="item">
+                <div class="item_top">
+                    <div class="yellow">
+                        <div>∨ 게임게시판</div>
+                        <div>+</div>
+                    </div>
+                   
+                </div>
+                <article  class="notice flex">
+                    <DIV>
+                        <div>다크에덴SD 사전예약 하네요💾</div>
+                    </DIV>
+                    <div class="date">2023-07-25</div>
+                </article>
+                <article  class="notice flex">
+                    <DIV>
+                        <div> 타이니 테일즈 감성 가득한 디자인💾</div>
+                    </DIV>
+                    <div class="date">2023-07-21</div>
+                </article>
+                <article  class="notice flex">
+                    <DIV>
+                        <div>퀸즈나이츠가 사전예약을 시작했어요💾</div>
+                    </DIV>
+                    <div class="date">2023-07-03</div>
+                </article>
+                <article  class="notice flex">
+                    <DIV>
+                        <div>레딧 api 유로화 전환💾</div>
+                    </DIV>
+                    <div class="date">2023-06-14</div>
+                </article>
+                <article  class="notice flex">
+                    <DIV>
+                        <div>[ps코솔-확장카드]웨스턴💾</div>
+                    </DIV>
+                    <div class="date">2023-06-07</div>
+                </article>
+                
+            </div>
+            <div class="item">
+                <div class="item_top">
+                    <div class="yellow">
+                        <div>∨ 자유게시판</div>
+                        <div>+</div>
+                    </div>
+                  
+                </div>
+                <article  class="notice flex">
+                    <DIV>
+                        <div>해외 여행 갈 땐 이제 와이파이</div>
+                    </DIV>
+                    <div>5</div>
+                    <div class="date">2020-12-23</div>
+                </article>
+                <article  class="notice flex">
+                    <DIV>
+                        <div> 다들 언제가 가장 그리우십니까?</div>
+                    </DIV>
+                    <div class="date">2020-12-23</div>
+                </article>
+                <article  class="notice flex">
+                    <DIV>
+                        <div> 메인컴퓨터 구입 및 견적 문의.</div>
+                    </DIV>
+                    <div class="date">2020-12-23</div>
+                </article>
+                <article  class="notice flex">
+                    <DIV>
+                        <div> 메인컴퓨터 구입 및 견적 문의.</div>
+                    </DIV>
+                    <div class="date">2020-12-23</div>
+                </article>
+                <article  class="notice flex">
+                    <DIV>
+                        <div> 메인컴퓨터 구입 및 견적 문의.</div>
+                    </DIV>
+                    <div class="date">2020-12-23</div>
+                </article>
+                
+            </div>
+            <div class="item">
+                <div class="item_top">
+                    <div class="yellow">
+                        <div>∨ 종합 QnA</div>
+                        <div>+</div>
+                    </div>
+                  
+                </div>
+                <article  class="notice flex">
+                    <DIV>
+                        <div> 기가바이트 어로스 FI270Q..💾</div>
+                    </DIV>
+                    <div class="date">2020-12-23</div>
+                </article>
+                <article  class="notice flex">
+                    <DIV>
+                        <div> 메인컴퓨터 구입 및 견적 문의.</div>
+                    </DIV>
+                    <div class="date">2020-12-23</div>
+                </article>
+                <article  class="notice flex">
+                    <DIV>
+                        <div>사운드바에서 화이트노이즈 같은데..</div>
+                    </DIV>
+                    <div class="date">2020-12-23</div>
+                </article>
+                <article  class="notice flex">
+                    <DIV>
+                        <div> 메인컴퓨터 구입 및 견적 문의.</div>
+                    </DIV>
+                    <div class="date">2020-12-23</div>
+                </article>
+                <article  class="notice flex">
+                    <DIV>
+                        <div> 메인컴퓨터 구입 및 견적 문의.</div>
+                    </DIV>
+                    <div class="date">2020-12-23</div>
+                </article>
+                
+            </div>
+        </div>      
+        
+        <div id="company" class="flex">
+            <img src="image/회사 1.jpg">
+            <img src="image/회사 2.jpg">
+            <img src="image/회사 3.jpg">
+            <img src="image/회사 4.jpg">
+            <img src="image/회사 5.jpg">
+            <img src="image/회사 6.jpg">
+        </div>
+
+    </main>
+    <footer class="flex">
+        <article>
+            <p>플레이웨어즈</p>
+            <div>대표 : 박성진</div>
+            <div>Copyright 2015 PLAYWARES. All rights reserved.</div>
+        </article>
+        <article>
+            <p>CONTACT US <span>∨</span></p>
+            <div>
+                이메일 : webmaster@playwares.com
+            </div>
+            <div>
+                주소 : 서울시 금천구 가산디지털 1로 STX-V타워 704호 
+            </div>
+        </article>
+        <article>
+            <p>INFORMATION <span>∨</span></p>
+            <div>요청/건의</div>
+            <div>개인정보취급방침</div>
+            <div>광고/제휴 문의</div>
+        </article>
+    </footer>
+
+
+</body>
+</html>
